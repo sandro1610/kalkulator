@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kalkulator</title>
+    <style type="text/css">
+        .tombol {
+            background-color: #072cff;
+            /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .tombol:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+        .tabel {
+            background-color: rgb(13, 250, 4);
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="kalkulator">
+
+        <table class="tabel">
+            <caption>Kalkulator</caption>
+            <tr>
+                <td>Angka 1</td>
+                <td>:</td>
+                <td><input type="number" id="angka1" name="angka1"></td>
+                <td><input type="checkbox" id="check1" name="check1"></td>
+            </tr>
+            <tr>
+                <td>Angka 2</td>
+                <td>:</td>
+                <td><input type="number" id="angka2" name="angka2"></td>
+                <td><input type="checkbox" id="check2" name="check2"></td>
+            </tr>
+            <tr>
+                <td>Angka 3</td>
+                <td>:</td>
+                <td><input type="number" id="angka3" name="angka3"></td>
+                <td><input type="checkbox" id="check3" name="check3"></td>
+            </tr>
+            <tr>
+                <td>Hasil</td>
+                <td>:</td>
+                <td><input type="number" name="hasil"></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input class="tombol" type="button" onclick="tambah()" value="  +  ">
+                    <input class="tombol" type="button" onclick="kurang()" value="  -  ">
+                    <input class="tombol" type="button" onclick="kali()" value="  *  ">
+                    <input class="tombol" type="button" onclick="bagi()" value="  /  ">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    function tambah() {
+        var angka1 = parseFloat(document.kalkulator.angka1.value);
+        var angka2 = parseFloat(document.kalkulator.angka2.value);
+        var angka3 = parseFloat(document.kalkulator.angka3.value);
+
+        var check1 = document.kalkulator.check1.checked;
+        var check2 = document.kalkulator.check2.checked;
+        var check3 = document.kalkulator.check3.checked;
+
+        if (check1 == true && check2 == false && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == true && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == false && check3 == true) {
+            alert("Please checklist more than 1");
+        } else if (check1 == true && check2 == true && check3 == false) {
+            var hasil = angka1 + angka2;
+        } else if (check1 == true && check2 == false && check3 == true) {
+            var hasil = angka1 + angka3;
+        } else if (check1 == false && check2 == true && check3 == true) {
+            var hasil = angka2 + angka3;
+        } else if (check1 == true && check2 == true && check3 == true) {
+            var hasil = angka1 + angka2 + angka3;
+        } else {
+            alert("Please checklist form");
+        }
+        document.kalkulator.hasil.value = hasil;
+    }
+    function kurang() {
+        var angka1 = parseFloat(document.kalkulator.angka1.value);
+        var angka2 = parseFloat(document.kalkulator.angka2.value);
+        var angka3 = parseFloat(document.kalkulator.angka3.value);
+
+        var check1 = document.kalkulator.check1.checked;
+        var check2 = document.kalkulator.check2.checked;
+        var check3 = document.kalkulator.check3.checked;
+
+        if (check1 == true && check2 == false && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == true && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == false && check3 == true) {
+            alert("Please checklist more than 1");
+        } else if (check1 == true && check2 == true && check3 == false) {
+            var hasil = angka1 - angka2;
+        } else if (check1 == true && check2 == false && check3 == true) {
+            var hasil = angka1 - angka3;
+        } else if (check1 == false && check2 == true && check3 == true) {
+            var hasil = angka2 - angka3;
+        } else if (check1 == true && check2 == true && check3 == true) {
+            var hasil = angka1 - angka2 - angka3;
+        } else {
+            alert("Please checklist form");
+        }
+        document.kalkulator.hasil.value = hasil;
+    }
+    function kali() {
+        var angka1 = parseFloat(document.kalkulator.angka1.value);
+        var angka2 = parseFloat(document.kalkulator.angka2.value);
+        var angka3 = parseFloat(document.kalkulator.angka3.value);
+
+        var check1 = document.kalkulator.check1.checked;
+        var check2 = document.kalkulator.check2.checked;
+        var check3 = document.kalkulator.check3.checked;
+
+        if (check1 == true && check2 == false && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == true && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == false && check3 == true) {
+            alert("Please checklist more than 1");
+        } else if (check1 == true && check2 == true && check3 == false) {
+            var hasil = angka1 * angka2;
+        } else if (check1 == true && check2 == false && check3 == true) {
+            var hasil = angka1 * angka3;
+        } else if (check1 == false && check2 == true && check3 == true) {
+            var hasil = angka2 * angka3;
+        } else if (check1 == true && check2 == true && check3 == true) {
+            var hasil = angka1 * angka2 * angka3;
+        } else {
+            alert("Please checklist form");
+        }
+        document.kalkulator.hasil.value = hasil;
+    }
+    function bagi() {
+        var angka1 = parseFloat(document.kalkulator.angka1.value);
+        var angka2 = parseFloat(document.kalkulator.angka2.value);
+        var angka3 = parseFloat(document.kalkulator.angka3.value);
+
+        var check1 = document.kalkulator.check1.checked;
+        var check2 = document.kalkulator.check2.checked;
+        var check3 = document.kalkulator.check3.checked;
+
+        if (check1 == true && check2 == false && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == true && check3 == false) {
+            alert("Please checklist more than 1");
+        } else if (check1 == false && check2 == false && check3 == true) {
+            alert("Please checklist more than 1");
+        } else if (check1 == true && check2 == true && check3 == false) {
+            var hasil = angka1 / angka2;
+        } else if (check1 == true && check2 == false && check3 == true) {
+            var hasil = angka1 / angka3;
+        } else if (check1 == false && check2 == true && check3 == true) {
+            var hasil = angka2 / angka3;
+        } else if (check1 == true && check2 == true && check3 == true) {
+            var hasil = angka1 / angka2 / angka3;
+        } else {
+            alert("Please checklist form");
+        }
+        document.kalkulator.hasil.value = hasil;
+    }
+</script>
